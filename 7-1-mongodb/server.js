@@ -223,7 +223,10 @@ async function updateStudent() {
 }
 
 // delete document
-
+async function deleteStudent() {
+   await Student.deleteOne({ name: "Sara" });
+   console.log("✅ Deleted Sara");
+}
 
 
 
