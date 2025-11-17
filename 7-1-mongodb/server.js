@@ -170,7 +170,20 @@
 import mongoose from "mongoose";
 
 // establish connection
+const uri =
+  "mongodb+srv://moayyed1425:Mo%40yed1425@cluster0.xip40vd.mongodb.net/?retryWrites=true&w=majority";
 
+async function connectToDB() {
+  try {
+    await mongoose.connect(uri, { dbName: "test" });
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Mongo connection error:", error);
+    process.exit(1);
+  }
+}
+
+connectToDB();
 
 // define schema
 
